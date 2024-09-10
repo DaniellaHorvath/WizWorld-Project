@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WizWorld</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="#">
+            <img class="logo" alt="logo"/>
+        </a>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-link">Rules of WizMemory</li>
+                <li class="nav-link">Let's play</li>
+            </ul>
+        </nav>
+    <main>
+        <section class="landing-page">
+            <img class="landing-page-img" alt="">
+        </section>
+
+        <section class="rule-of-the-game">
+            <div class="conatiner">
+                <h1 class="header">Rule of WizMemory Game</h1>
+                <ul class="list-of-the-game">
+                    <li>⭐ You will start by flipping over one card</li>
+                    <li>⭐ If the next card you flip matches, you get +1 to your score</li>
+                    <li>⭐ These cards then disappear</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="lets-play">
+            <div class="conatiner">
+                <h1 class="header">WizMemory Game</h1>
+                <p class="score">Score: </p>
+                <div id="grid"></div>
+                <button class="reload">Let's get started!</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <div>
+                <p class="copyright">Copyright</p>
+            </div>
+        </footer>
+    </main>
+    </header>
+</body>
+<script src="../dist/index.js" defer></script>
+</html>
