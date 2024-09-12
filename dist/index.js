@@ -6,43 +6,31 @@ var CardNames;
 (function (CardNames) {
     CardNames["Card1"] = "AlbusDumbledore";
     CardNames["Card2"] = "BellatrixLestrange";
-    CardNames["Card3"] = "ChoChange";
-    CardNames["Card4"] = "DoloresUmbridge";
-    CardNames["Card5"] = "DracoMalfoy";
-    CardNames["Card6"] = "HarryPotter";
-    CardNames["Card7"] = "Hedwig";
-    CardNames["Card8"] = "HermioneGranger";
-    CardNames["Card9"] = "RonWeasley";
-    CardNames["Card10"] = "LordVoldemort";
-    CardNames["Card11"] = "LunaLovegood";
-    CardNames["Card12"] = "MinervaMcGonagall";
-    CardNames["Card13"] = "NevilleLongbottom";
-    CardNames["Card14"] = "RubeusHagrid";
-    CardNames["Card15"] = "SeverusSnape";
-    CardNames["Card16"] = "TheSortingHat";
-    CardNames["Card17"] = "DeanThomas";
-    CardNames["Card18"] = "Dobby";
+    CardNames["Card3"] = "DoloresUmbridge";
+    CardNames["Card4"] = "DracoMalfoy";
+    CardNames["Card5"] = "HarryPotter";
+    CardNames["Card6"] = "Hedwig";
+    CardNames["Card7"] = "HermioneGranger";
+    CardNames["Card8"] = "RonWeasley";
+    CardNames["Card9"] = "LordVoldemort";
+    CardNames["Card10"] = "LunaLovegood";
+    CardNames["Card11"] = "RubeusHagrid";
+    CardNames["Card12"] = "SeverusSnape";
 })(CardNames || (CardNames = {}));
 var CardImages;
 (function (CardImages) {
     CardImages["Card1"] = "img/AlbusDumbledore.webp";
     CardImages["Card2"] = "img/BellatrixLestrange.webp";
-    CardImages["Card3"] = "img/ChoChange.webp";
-    CardImages["Card4"] = "img/DoloresUmbridge.webp";
-    CardImages["Card5"] = "img/DracoMalfoy.webp";
-    CardImages["Card6"] = "img/HarryPotter.webp";
-    CardImages["Card7"] = "img/Hedwig.webp";
-    CardImages["Card8"] = "img/HermioneGranger.webp";
-    CardImages["Card9"] = "img/RonWeasley.webp";
-    CardImages["Card10"] = "img/LordVoldemort.webp";
-    CardImages["Card11"] = "img/LunaLovegood.webp";
-    CardImages["Card12"] = "img/MinervaMcGonagall.webp";
-    CardImages["Card13"] = "img/NevilleLongbottom.webp";
-    CardImages["Card14"] = "img/RubeusHagrid.webp";
-    CardImages["Card15"] = "img/SeverusSnape.webp";
-    CardImages["Card16"] = "img/TheSortingHat.webp";
-    CardImages["Card17"] = "img/DeanThomas.webp";
-    CardImages["Card18"] = "img/Dobby.webp";
+    CardImages["Card3"] = "img/DoloresUmbridge.webp";
+    CardImages["Card4"] = "img/DracoMalfoy.webp";
+    CardImages["Card5"] = "img/HarryPotter.webp";
+    CardImages["Card6"] = "img/Hedwig.webp";
+    CardImages["Card7"] = "img/HermioneGranger.webp";
+    CardImages["Card8"] = "img/RonWeasley.webp";
+    CardImages["Card9"] = "img/LordVoldemort.webp";
+    CardImages["Card10"] = "img/LunaLovegood.webp";
+    CardImages["Card11"] = "img/RubeusHagrid.webp";
+    CardImages["Card12"] = "img/SeverusSnape.webp";
 })(CardImages || (CardImages = {}));
 // Sort the array randomly ---> this is a shortcut to shuffle the array 
 // Using generics for the shuffleArray allows functions to be reusable with different types
@@ -63,17 +51,23 @@ const cardArray = [
     { name: CardNames.Card10, images: CardImages.Card10 },
     { name: CardNames.Card11, images: CardImages.Card11 },
     { name: CardNames.Card12, images: CardImages.Card12 },
-    { name: CardNames.Card13, images: CardImages.Card13 },
-    { name: CardNames.Card14, images: CardImages.Card14 },
-    { name: CardNames.Card15, images: CardImages.Card15 },
-    { name: CardNames.Card16, images: CardImages.Card16 },
-    { name: CardNames.Card17, images: CardImages.Card17 },
-    { name: CardNames.Card18, images: CardImages.Card18 }
+    { name: CardNames.Card1, images: CardImages.Card1 },
+    { name: CardNames.Card2, images: CardImages.Card2 },
+    { name: CardNames.Card3, images: CardImages.Card3 },
+    { name: CardNames.Card4, images: CardImages.Card4 },
+    { name: CardNames.Card5, images: CardImages.Card5 },
+    { name: CardNames.Card6, images: CardImages.Card6 },
+    { name: CardNames.Card7, images: CardImages.Card7 },
+    { name: CardNames.Card8, images: CardImages.Card8 },
+    { name: CardNames.Card9, images: CardImages.Card9 },
+    { name: CardNames.Card10, images: CardImages.Card10 },
+    { name: CardNames.Card11, images: CardImages.Card11 },
+    { name: CardNames.Card12, images: CardImages.Card12 },
 ];
-console.log(shuffleArray(cardArray));
+shuffleArray(cardArray);
 // The HTMLElements interface represents any HTML element. 
-const gridDisplay = document.querySelector('#grid'); // querySelector() method returns the first element that matches a CSS selector 
-const resultDisplay = document.querySelector('#result');
+const gridDisplay = document.querySelector('.grid'); // querySelector() method returns the first element that matches a CSS selector 
+const resultDisplay = document.querySelector('.result');
 let cardChosen = [];
 let cardChosenIds = [];
 const cardsWon = [];
@@ -94,7 +88,7 @@ function createBoard() {
         gridDisplay.appendChild(card);
     }
 }
-console.log(createBoard());
+createBoard();
 // Create a function to check a match 
 function checkMatch() {
     const cards = document.querySelectorAll('img');
@@ -103,10 +97,10 @@ function checkMatch() {
     if (optionOneId === optionTwoId) {
         cards[optionOneId].setAttribute('src', 'img/CardCover.png');
         cards[optionTwoId].setAttribute('src', 'img/CardCover.png');
-        alert(`You have clicked the same image!`);
+        // alert(`You have clicked the same image!`);
     }
     if (cardChosen[0] === cardChosen[1]) {
-        alert(`You found a match!`);
+        // alert(`You found a match!`);
         cards[optionOneId].removeEventListener('click', flipCard);
         cards[optionTwoId].removeEventListener('click', flipCard);
         cardsWon.push(cardChosen);
@@ -114,7 +108,7 @@ function checkMatch() {
     else {
         cards[optionOneId].setAttribute('src', 'img/CardCover.png');
         cards[optionTwoId].setAttribute('src', 'img/CardCover.png');
-        alert("Sorry, try again!");
+        // alert("Sorry, try again!");
     }
     resultDisplay.innerHTML = cardsWon.length.toString();
     cardChosen = [];
@@ -132,7 +126,7 @@ function flipCard() {
     cardChosenIds.push(cardId);
     this.setAttribute('src', cardArray[parseInt(cardId)].images);
     if (cardChosen.length === 2) {
-        setTimeout(checkMatch, 500);
+        setTimeout(checkMatch, 1);
     }
 }
 //# sourceMappingURL=index.js.map

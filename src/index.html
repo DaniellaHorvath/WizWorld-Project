@@ -11,43 +11,61 @@
 </head>
 <body>
     <header class="header">
-        <a href="#">
-            <img class="logo" alt="logo" src="img/Logo.png"/>
-        </a>
         <nav class="navbar">
+            <a href="#">
+                <img class="logo" alt="logo" src="imagesLandingPage/image-500x160.jpg"/>
+            </a>
             <ul class="nav-list">
-                <li class="nav-link">Rules of WizMemory</li>
-                <li class="nav-link">Let's play</li>
+                <li class="nav-list-menu">Rules</li>
+                <li class="nav-list-menu">Characters</li>
+                <li class="nav-list-menu">Let's play</li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="landing-page">
-            <img class="landing-page-img" alt="">
+            <img class="landing-page-img" alt="Image of the landing page" src="imagesLandingPage/H.P.LandingpageImg.webp">
         </section>
 
-        <section class="rule-of-the-game">
-            <div class="conatiner">
-                <h1 class="header">Rule of WizMemory Game</h1>
+    <div id="wrapper">
+        <section class="rule-section">
+            <div class="container">
+                <h1>Rules of WizMemory Game</h1>
                 <ul class="list-of-the-game">
-                    <li>⭐ You will start by flipping over one card</li>
-                    <li>⭐ If the next card you flip matches, you get +1 to your score</li>
-                    <li>⭐ These cards then disappear</li>
+                    <p class="rule-paragraph">The goal of WizMemory game is to match all pairs of cards by remembering their positions on the screen.
+                    A grid of Wizcards is displayed face down on the screen. Each card has a hidden image that can only be revealed by clicking on it.</p>
+                    <li class="list-items">⭐ Start the game by flipping over one card</li>
+                    <li class="list-items">⭐ If the card matches, they stay face-up, and you score points</li>
+                    <li class="list-items">⭐ If the cards do not match, they are automatically flipped back face down after a short delay and you can try again</li>
+                    <li class="list-items">⭐ WizGame ends when all pairs have been matched</li>
                 </ul>
             </div>
         </section>
 
-        <section class="lets-play">
-            <div class="conatiner">
-                <h1 class="header">WizMemory Game</h1>
-                <p class="score">Score: <span id="result"></span></p>
-                <div id="grid"></div>
-                <button class="reload">Let's get started!</button>
+        <section class="game-section">
+            <div>
+                <h1>WizMemory Game</h1>
+                <p class="score">Score: <span class="result"></span></p>
+                <div class="grid-container">
+                    <div class="grid"></div>
+                </div>
+                <div class="button">
+                    <button class="reload">Let's get started!</button>
+                </div>
             </div>
         </section>
-        <footer class="footer">
-            <div>
+
+        <section>
+            <div class="container">
+                <h1>Characters</h1>
+
+            </div>
+        </section>
+    </div>
+
+        <footer>
+            <div class="footer">
                 <p class="copyright">Copyright</p>
             </div>
         </footer>

@@ -1,24 +1,77 @@
+/* 
+Font-family: Cinzel,
+Size of the Logo: 6rem,
+Navbar font-size: 1.6rem,
+
+---- Colour code ----
+background: #fefae0,
+burgundy colour hex code: #800020;
+
+*/
+
+/* ---- Global settings ---- */
 *{
     font-family: Cinzel, sans-serif, serif, Arial, Helvetica, sans-serif;
     font-weight: 600;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #fefae0;
 }
 
 html{
     scroll-behavior: smooth;
 }
 
+/* ---- Navbar ---- */
 .header{
+    padding-bottom: 100px;
+}
+
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 4px solid #800020;
+    position: fixed;
+    width: 100%;
+    background:#fefae0;
+    z-index: 100;
 }
 
-.nav-link{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    list-style: none;
+.logo {
+    height: 6rem;
 }
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 4.8rem;
+    padding: 0 2rem ;
+    font-size: 1.6rem;
+    font-weight: 700;
+    /* width: 100%;
+    object-fit: cover; */
+}
+
+.nav-list-menu:hover {
+    color: #fefae0;
+    background-color: #800020;
+    border: 2px solid #800020;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.landing-page-img{
+    width: 100%;
+}
+
+/* ---- Optional ---- */
+/* #wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+} */
 
 .container {
     max-width: 120rem;
@@ -26,13 +79,107 @@ html{
     margin: 0 auto;
 }
 
-#grid {
-    margin: auto;
-    margin: 0;
-    justify-content: center;
-    width: 700px;
-    height: 400px;
+/* ---- Rules ---- */
+
+.rule-section {
     display: flex;
-    flex-wrap: wrap;
-    padding: 60px;
-  }
+    flex-direction: row;
+    align-items: center;
+    padding: 4.2rem 4.2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 3.2rem;
+}
+
+.rule-paragraph{
+    font-size: 1.6rem;
+    text-align: justify;
+    text-transform: capitalize;
+    padding-bottom: 1.6rem;
+}
+
+.list-of-the-game {
+    box-shadow: #800020 0px 5px 15px;
+    border-radius: 10px;
+    padding: 1.6rem;
+}
+
+.list-items {
+    font-size: 1.4rem;
+    list-style: none;
+    text-align: center;
+    line-height: 3rem;
+}
+
+/* ---- WizGame ---- */
+.score {
+    font-size: 1.8rem;
+    padding-bottom: 3.2rem;
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(4, 1fr);   
+    gap: 10px; 
+} */
+
+.grid img {
+    height: 12rem;
+    width: 10rem;
+}
+
+/* ---- Button ---- */
+.button{
+    padding: 3.2rem 3.2rem;
+}
+.reload {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: #800020 0px 5px 15px;
+    text-decoration: none;
+}
+
+.reload:hover {
+    background-color: #800020;
+    color: #fefae0;
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.2rem;
+} */
+
+/* .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 2rem;
+    height: 5rem;
+    gap:  5px;
+    row-gap: 5px;
+} */
+
+/* ---- Footer ---- */
+.footer {
+    align-items: center;
+    border-top: solid 4px #800020;
+    padding: 1rem 1rem;
+    
+}
+
+.footer-logo {
+    height: 3rem;
+}
+
+.copyright {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
