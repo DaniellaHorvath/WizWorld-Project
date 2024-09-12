@@ -71,9 +71,68 @@ const cardArray = [
     { name: CardNames.Card18, images: CardImages.Card18 }
 ];
 console.log(shuffleArray(cardArray));
-const gridDisplay = document.querySelector('#grid');
+// The HTMLElements interface represents any HTML element. 
+const gridDisplay = document.querySelector('#grid'); // querySelector() method returns the first element that matches a CSS selector 
 const resultDisplay = document.querySelector('#result');
 let cardChosen = [];
 let cardChosenIds = [];
 const cardsWon = [];
+const button = document.querySelector('button');
+button === null || button === void 0 ? void 0 : button.addEventListener('click', () => {
+    window.location.reload(); // When the HTML document loaded into web browser, it becomes a document objcet. The document object access with: window.document. The reload() method reloads the current document. 
+});
+// Create a function for the board to display the cards 
+function createBoard() {
+    if (!gridDisplay)
+        return;
+    for (let i = 0; i < cardArray.length; i++) {
+        const card = document.createElement('img'); // createElement creates an element 
+        // const card = document.createElement('img');
+        card.setAttribute('src', 'img/CardCover.png'); // setAttribute method sets a new value to an attribute. If the attribute does not exist, it is created first. Parameters (name, value) required 
+        card.setAttribute('data-id', i.toString());
+        card.addEventListener('click', flipCard); // addEventListener method attaches an event handler to a document like 'click' event. Parameter needs to include (event: required, function: required, capture: optional)
+        gridDisplay.appendChild(card);
+    }
+}
+console.log(createBoard());
+// Create a function to check a match 
+function checkMatch() {
+    const cards = document.querySelectorAll('img');
+    const optionOneId = parseInt(cardChosenIds[0]);
+    const optionTwoId = parseInt(cardChosenIds[1]);
+    if (optionOneId === optionTwoId) {
+        cards[optionOneId].setAttribute('src', 'img/CardCover.png');
+        cards[optionTwoId].setAttribute('src', 'img/CardCover.png');
+        alert(`You have clicked the same image!`);
+    }
+    if (cardChosen[0] === cardChosen[1]) {
+        alert(`You found a match!`);
+        cards[optionOneId].removeEventListener('click', flipCard);
+        cards[optionTwoId].removeEventListener('click', flipCard);
+        cardsWon.push(cardChosen);
+    }
+    else {
+        cards[optionOneId].setAttribute('src', 'img/CardCover.png');
+        cards[optionTwoId].setAttribute('src', 'img/CardCover.png');
+        alert("Sorry, try again!");
+    }
+    resultDisplay.innerHTML = cardsWon.length.toString();
+    cardChosen = [];
+    cardChosenIds = [];
+    if (cardsWon.length === cardArray.length / 2) {
+        resultDisplay.innerHTML = 'Congratulation!';
+    }
+}
+//Create a flipcard functionality
+// HTMLImageElement ----> Image() -- constructor creates and returns a new HTMLImageElement object representing an HTML <img> elemnt which is not attached to any DOM tree. It accepts optional width and height parameters. When called without parameters, new Image() is equivalent to calling document.createElement('img')
+function flipCard() {
+    // console.log(cardArray)
+    const cardId = this.getAttribute('data-id'); // returns the value of an elemnt's attribute
+    cardChosen.push(cardArray[parseInt(cardId)].name); // parseInt method parses a value as a string and returns the first integer. 
+    cardChosenIds.push(cardId);
+    this.setAttribute('src', cardArray[parseInt(cardId)].images);
+    if (cardChosen.length === 2) {
+        setTimeout(checkMatch, 500);
+    }
+}
 //# sourceMappingURL=index.js.map

@@ -2,3 +2,37 @@
     font-family: Cinzel, sans-serif, serif, Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    list-style: none;
+}
+
+.container {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
+
+#grid {
+    margin: auto;
+    margin: 0;
+    justify-content: center;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px;
+  }

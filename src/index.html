@@ -12,7 +12,7 @@
 <body>
     <header class="header">
         <a href="#">
-            <img class="logo" alt="logo"/>
+            <img class="logo" alt="logo" src="img/Logo.png"/>
         </a>
         <nav class="navbar">
             <ul class="nav-list">
@@ -20,6 +20,8 @@
                 <li class="nav-link">Let's play</li>
             </ul>
         </nav>
+    </header>
+
     <main>
         <section class="landing-page">
             <img class="landing-page-img" alt="">
@@ -39,7 +41,7 @@
         <section class="lets-play">
             <div class="conatiner">
                 <h1 class="header">WizMemory Game</h1>
-                <p class="score">Score: </p>
+                <p class="score">Score: <span id="result"></span></p>
                 <div id="grid"></div>
                 <button class="reload">Let's get started!</button>
             </div>
@@ -50,7 +52,6 @@
             </div>
         </footer>
     </main>
-    </header>
+    <script src="../dist/index.js" defer></script>
 </body>
-<script src="../dist/index.js" defer></script>
 </html>
