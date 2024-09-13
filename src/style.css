@@ -17,6 +17,7 @@ burgundy colour hex code: #800020;
     padding: 0;
     margin: 0;
     background-color: #fefae0;
+    
 }
 
 html{
@@ -24,54 +25,67 @@ html{
 }
 
 /* ---- Navbar ---- */
-.header{
-    padding-bottom: 100px;
-}
+/* .header{
+    background: #800020;
+} */
 
 .navbar{
+    background: #800020;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 4px solid #800020;
     position: fixed;
+    padding: 0.5rem;
     width: 100%;
-    background:#fefae0;
+    /* opacity: 0.2; */
     z-index: 100;
 }
 
-.logo {
-    height: 6rem;
+#logo {
+    height: 4rem;
+    background-color: #800020;
 }
 
 .nav-list {
+    background-color: #800020;
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 4.8rem;
+    gap: 1rem;
     padding: 0 2rem ;
     font-size: 1.6rem;
     font-weight: 700;
-    /* width: 100%;
-    object-fit: cover; */
+    /* width: 100%; */
+    object-fit: cover;
+}
+
+.nav-list-menu {
+    background-color: #800020;
+    margin: 0 3rem 0 3rem;
 }
 
 .nav-list-menu:hover {
     color: #fefae0;
-    background-color: #800020;
-    border: 2px solid #800020;
+    /* background-color: #800020;
+    border: solid #800020; */
     border-radius: 10px;
-    padding: 10px;
+    padding: 4px;
 }
 
-.landing-page-img{
+.landing-page {
+    padding: 80px 0 0 0;
+}
+#landing-page-img{
     width: 100%;
+    /* filter: blur(2px); */
 }
 
 /* ---- Optional ---- */
-/* #wrapper {
+#wrapper {
     max-width: 120rem;
     margin: 0 auto;
-} */
+    
+}
 
 .container {
     max-width: 120rem;
@@ -115,28 +129,85 @@ h1 {
 }
 
 /* ---- WizGame ---- */
-.score {
+.score-title {
     font-size: 1.8rem;
     padding-bottom: 3.2rem;
 }
 
-/* .grid-container {
+.score{
+    font-size: 1.6rem;
+    
+}
+
+.grid-container{
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(4, 1fr);   
-    gap: 10px; 
-} */
+    justify-content: center;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(6, 8.75rem);
+    grid-template-rows: repeat(3, calc(8rem/ 2 * 3));
+}
+
+.card {
+    height: calc(8rem / 2 * 3);
+    width: 8.75rem;
+    border-radius: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+    width: 8.75rem;
+    height: 12rem;
+    border-radius: 10px;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.front, 
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
 
 .grid img {
     height: 12rem;
     width: 10rem;
+    margin: 10px;
+}
+
+.card .back {
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='47.35' height='47.8' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(345, 100%, 25%, 1)'/><path d='m23.67 15 8.66-15 15.02 8.66-8.67 15.01Zm0-30 8.66 15 15.02-8.66-8.67-15.01zM0-8.33v17m47.35-17v17M15.01 0h17.32m-8.66 32.8 8.66 15 15.02-8.66-8.67-15.01zM0 39.47v17m47.35-17v17M15.01 47.8h17.32m-56-32.8L-15 0 0 8.65l-8.66 15.01Zm47.35 0L15 0 0 8.65l8.67 15.01Zm0-30L15 0 0-8.66l8.67-15.01Zm47.33 30L62.35 0 47.33 8.65 56 23.67ZM23.67 62.8l8.66-15 15.02 8.66-8.67 15.01zm47.34-30-8.66 15-15.02-8.66L56 24.13Zm-47.33 30L15 47.8 0 56.45l8.67 15.01Zm-47.35-30 8.67 15 15-8.65-8.66-15.01zm47.35 0L15 47.8 0 39.15l8.67-15.01Z'  stroke-width='1' stroke='hsla(33, 74%, 49%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+    background-position: center center;
+    background-size: cover;
+    backface-visibility: hidden;
 }
 
 /* ---- Button ---- */
-.button{
+
+.actions {
+    display: flex;
+    justify-content: center;
     padding: 3.2rem 3.2rem;
+    
 }
-.reload {
+
+button {
+    background: #fefae0;
     text-align: center;
     font-size: 1.6rem;
     padding: 1.2rem;
@@ -146,40 +217,24 @@ h1 {
     text-decoration: none;
 }
 
-.reload:hover {
+.actions button:hover {
     background-color: #800020;
     color: #fefae0;
 }
 
-/* .grid-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1.2rem;
-} */
-
-/* .grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    width: 2rem;
-    height: 5rem;
-    gap:  5px;
-    row-gap: 5px;
-} */
 
 /* ---- Footer ---- */
-.footer {
+.footer-container {
     align-items: center;
-    border-top: solid 4px #800020;
     padding: 1rem 1rem;
-    
-}
-
-.footer-logo {
-    height: 3rem;
+    background: #800020;
 }
 
 .copyright {
     font-size: 1.2rem;
+    text-transform: capitalize;
     text-align: center;
+    background: #800020;
+    color: #fefae0;
 }
 
