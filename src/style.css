@@ -30,7 +30,7 @@ html{
 } */
 
 .navbar{
-    background: #800020;
+    background: rgba(128, 0, 0, 38);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -77,12 +77,14 @@ html{
 }
 #landing-page-img{
     width: 100%;
+    object-fit: cover;
     /* filter: blur(2px); */
 }
 
 /* ---- Optional ---- */
 #wrapper {
-    max-width: 120rem;
+    /* max-width: 120rem; */
+    max-width: 80rem;
     margin: 0 auto;
     
 }
@@ -143,8 +145,11 @@ h1 {
     display: grid;
     justify-content: center;
     grid-gap: 0.5rem;
-    grid-template-columns: repeat(6, 8.75rem);
+    max-width: 120rem;
+    /* grid-template-columns: repeat(6, 8.75rem); */
+    grid-template-columns: repeat(auto-fill, minmax(8.75rem, 8rem));
     grid-template-rows: repeat(3, calc(8rem/ 2 * 3));
+    
 }
 
 .card {

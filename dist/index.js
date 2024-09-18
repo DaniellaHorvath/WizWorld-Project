@@ -42,23 +42,34 @@ const cardData = [
         "name": "Ron Weasley"
     },
     {
-        "image": "img/RubeusHagrid.png",
+        "image": "img/SeverusSnape.png",
+        "name": "Severus Snape"
+    },
+    {
+        "image": "img/LunaLovegood.png",
+        "name": "Luna Lovegood"
+    },
+    {
+        "image": "img/MinervaMcGonagall.png",
         "name": "Rubeus Hagrid"
-    }
+    },
+    {
+        "image": "img/ChoChange.png",
+        "name": "Cho Change"
+    },
+    // {
+    //     "image": "img/DeanThomas.png",
+    //     "name": "Dean Thomas"
+    // },
+    // {
+    //     "image": "img/FredandGeorgeWeasley.png",
+    //     "name": "Fred and George Weasley"
+    // }
 ];
 cards = [...cardData, ...cardData];
 shuffleCards();
 generateCards();
-// initializing the card by using the fetch API: we have to tell the fetch function where 
-// our data is located, it's an async API so we have to use a promise chain ---->
-// every function call takes the argument of the previous then function call and use it as an input 
-// fetch("WizMemoryGame/src/data/card.json")
-//     .then((res) => res.json())
-//     .then((data) => {
-//         cards = [...data, ...data]; 
-//         shuffleCards();
-//         generateCards();
-//     });
+
 function shuffleCards() {
     let currentIndex = cards.length;
     let randomIndex;
