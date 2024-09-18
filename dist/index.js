@@ -69,7 +69,6 @@ const cardData = [
 cards = [...cardData, ...cardData];
 shuffleCards();
 generateCards();
-
 function shuffleCards() {
     let currentIndex = cards.length;
     let randomIndex;
