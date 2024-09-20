@@ -30,7 +30,7 @@ html{
 } */
 
 .navbar{
-    background: rgba(128, 0, 0, 38);
+    background: #800020;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,21 +41,21 @@ html{
     z-index: 100;
 }
 
-#logo {
+.logo {
     height: 4rem;
     background-color: #800020;
 }
 
 .nav-list {
     background-color: #800020;
+    text-decoration: none;
     display: flex;
     align-items: center;
     list-style: none;
     gap: 1rem;
-    padding: 0 2rem ;
+    padding: 0 4rem ;
     font-size: 1.6rem;
     font-weight: 700;
-    /* width: 100%; */
     object-fit: cover;
 }
 
@@ -65,16 +65,23 @@ html{
 }
 
 .nav-list-menu:hover {
-    color: #fefae0;
-    /* background-color: #800020;
-    border: solid #800020; */
+    border: solid #fefae0;
     border-radius: 10px;
-    padding: 4px;
+    box-shadow: #fefae0 0px 5px 15px;
+    padding: 8px;
 }
+
+a {
+    background: #800020;
+    color: #fefae0;
+    text-decoration: none;
+}
+
 
 .landing-page {
     padding: 80px 0 0 0;
 }
+
 #landing-page-img{
     width: 100%;
     object-fit: cover;
@@ -130,7 +137,7 @@ h1 {
     line-height: 3rem;
 }
 
-/* ---- WizGame ---- */
+/* ---- WizGame Cards ---- */
 .score-title {
     font-size: 1.8rem;
     padding-bottom: 3.2rem;

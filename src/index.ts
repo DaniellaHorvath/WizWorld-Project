@@ -11,9 +11,11 @@ let lockBoard = false; // use when we are comparing two cards
 let score = 0; // will count the comparing attempts of user
 
 
+
 // Updates the score and make the text content equal to this score variable
 const scoreElement = document.querySelector<HTMLDivElement>('.score')!;
 scoreElement.textContent = score.toString();
+
 
 const cardData: Card[] = [
     {
@@ -58,7 +60,7 @@ const cardData: Card[] = [
     },
     {
         "image": "img/MinervaMcGonagall.png",
-        "name": "Rubeus Hagrid"
+        "name": "Minerva McGonagall"
     },
     {
         "image": "img/ChoChange.png",
@@ -74,6 +76,7 @@ const cardData: Card[] = [
     // }
 ]
 
+// Created the challow copy of cardData
 cards = [...cardData, ...cardData];
 shuffleCards();
 generateCards();
@@ -122,11 +125,10 @@ function flipCard(this: HTMLDivElement): void {
     }
 
     secondCard = this;
-    score++;
-    // document.querySelector(".score")?.textContent = score;
-    scoreElement.textContent = score.toString();
+    // score++;
+    // scoreElement.textContent = score.toString();
     lockBoard = true;
-
+  
     checkForMatch();
 }
 
@@ -143,10 +145,17 @@ function disableCards(): void {
     if(firstCard && secondCard){
         firstCard.removeEventListener("click", flipCard);
         secondCard.removeEventListener("click", flipCard);
-        resetBoard();
+        
+
+        // score++;
+        // scoreElement.textContent = score.toString();
+        // resetBoard();
+    
+        // firstCard?.removeEventListener("click", flipCard);
+        // secondCard?.removeEventListener("click", flipCard);
+   
     }
-    // firstCard?.removeEventListener("click", flipCard);
-    // secondCard?.removeEventListener("click", flipCard);
+    resetBoard();
 }
 
 function unflipCards(): void {
@@ -160,6 +169,7 @@ function unflipCards(): void {
         resetBoard();
     }, 1000);
 }
+
 
 function resetBoard(): void {
     firstCard = null;

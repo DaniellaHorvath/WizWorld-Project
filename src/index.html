@@ -13,12 +13,11 @@
     <header class="header">
         <nav class="navbar">
             <a href="#">
-                <img id="logo" alt="logo" src="imagesLandingPage/image-500x160.jpg"/>
+                <img class="logo" alt="logo" src="imagesLandingPage/image-1000x350.jpg"/>
             </a>
             <ul class="nav-list">
-                <li class="nav-list-menu">Rules</li>
-                <!-- <li class="nav-list-menu">Characters</li> -->
-                <li class="nav-list-menu">WizGame</li>
+                <li class="nav-list-menu"><a href="#rules">Rules</a></li>
+                <li class="nav-list-menu"><a href="#game">WizGame</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +28,7 @@
         </section>
 
     <div id="wrapper">
-        <section class="rule-section">
+        <section class="rule-section" id="rules">
             <div class="container">
                 <h1>Rules of WizMemory Game</h1>
                 <ul class="list-of-the-game">
@@ -43,7 +42,7 @@
             </div>
         </section>
 
-        <section class="game-section">
+        <section class="game-section" id="game">
             <div class="container">
                 <h1>WizMemory Game</h1>
                 <p class="score-title">Score: <span class="score"></span></p>
@@ -52,18 +51,10 @@
                 <div class="actions">
                     <button onclick="restart()">Restart</button>
                 </div>
+                
             </div>
         </section>
-
-        <!-- Stretch Activity-->
-        <!-- <section>
-            <div class="container">
-                <h1>Characters</h1>
-
-            </div>
-        </section> -->
     </div>
-
         <footer class="footer">
             <div class="footer-container">
                 <p class="copyright">Copyright &copy; Daniella Horvath</p>

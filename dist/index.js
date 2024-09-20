@@ -51,7 +51,7 @@ const cardData = [
     },
     {
         "image": "img/MinervaMcGonagall.png",
-        "name": "Rubeus Hagrid"
+        "name": "Minerva McGonagall"
     },
     {
         "image": "img/ChoChange.png",
@@ -66,6 +66,7 @@ const cardData = [
     //     "name": "Fred and George Weasley"
     // }
 ];
+// Created the challow copy of cardData
 cards = [...cardData, ...cardData];
 shuffleCards();
 generateCards();
@@ -107,7 +108,7 @@ function flipCard() {
         return;
     }
     secondCard = this;
-    score++;
+    // score++;
     // document.querySelector(".score")?.textContent = score;
     scoreElement.textContent = score.toString();
     lockBoard = true;
@@ -127,8 +128,14 @@ function disableCards() {
         secondCard.removeEventListener("click", flipCard);
         resetBoard();
     }
+    score++;
+    scoreElement.textContent = score.toString();
+    resetBoard();
     // firstCard?.removeEventListener("click", flipCard);
     // secondCard?.removeEventListener("click", flipCard);
+    if (score === 12) {
+        showWinnerImage();
+    }
 }
 function unflipCards() {
     setTimeout(() => {
@@ -140,6 +147,16 @@ function unflipCards() {
         }
         resetBoard();
     }, 1000);
+}
+function showWinnerImage() {
+    // Clear the grid container
+    gridContainer.innerHTML = "";
+    //Create and display the winning image
+    const winnerVideo = document.createElement("video");
+    winnerVideo.innerHTML = `
+    <canvas id="canvas" width="300" height="300"></canvas>
+  `;
+    winnerVideo.classList.add('winning-video');
 }
 function resetBoard() {
     firstCard = null;
